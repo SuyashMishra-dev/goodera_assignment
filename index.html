@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobHunt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,500;0,600;1,700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/21751d3655.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            /* Normalize CSS */
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .bg-primary {
+            background: linear-gradient(274.83deg, #5DB0DF 0.58%, #5D7ADF 74.3%);
+        }
+
+        .header {
+            padding: 1rem 7rem;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        button {
+            cursor: pointer;
+        }
+        
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex-between {
+            justify-content: space-between !important;
+        }
+
+        .anchor {
+            margin: 0.3rem 2rem;
+            font-size: 13px;
+            color: white;
+        }
+
+        .thin {
+            font-weight: 300;
+        }
+
+        .bold {
+            font-weight: 600;
+        }
+
+        .logo {
+            font-size: 16px;
+        }
+
+        .underline  {
+            border-bottom: 3px solid white;
+        }
+
+        .hero {
+            padding: 6rem 2rem;
+        } 
+
+        .title {
+            font-size: 48px;
+            margin: 0px;
+            color: white;
+        }
+
+        .subtitle {
+            color: white;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+
+        .search-section {
+            position: relative;
+            padding: 3rem 7rem;
+            background: #EAEAEA;
+        }
+
+        .search {
+            background: #FFFFFF;
+            box-shadow: 2px 12px 8px 2px rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+            width: 80%;
+            position: absolute;
+            top: -32px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .secondary-text {
+            color: #7B7B7B;
+        }
+
+        .mr-2 {
+            margin-right: 8px;
+        }
+
+        .button-search {
+            width: 280px;
+            height: 60px;
+            background: #F07987;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 36px;
+            border-radius: 8px;
+            border: 0px solid;
+            color: white;
+        }
+
+        .input {
+            width: 250px;
+        }
+
+        .options {
+            background: #EAEAEA;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 2rem;
+            width: 84%;
+            padding-bottom: 4rem;
+        }
+
+        .grid-item {
+            padding: 1.5rem;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+        }
+
+        .placeholder {
+            width: 150px !important;
+            height: 150px;
+            background: #C4C4C4;
+            border-radius: 16px;
+            margin-right: 16px;
+        }
+
+        .font-sm {
+            font-size: 12px;
+        }
+         
+        .align-left {
+            float: right;
+            color: #F07987;
+            border: 1px solid #F07987;
+            padding: .5rem .75rem;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .article {
+            width: 75%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .search {
+                position: relative;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .title {
+                font-size: 20px;
+                margin: 0px;
+                color: white;
+            }
+            .sm-flex-column {
+                flex-direction: column !important;
+            }
+
+            .header {
+                padding: 1rem 1rem;
+            } 
+
+            .anchor {
+                margin: 0.3rem .5rem;
+                font-size: 12px;
+            } 
+            .flex-column {
+                justify-content: center;
+                flex-direction: column;
+            }
+            .flex-column > div {
+                margin : .5rem 0rem;
+            }
+
+            .hero {
+                padding: 4rem 2rem;
+            }
+
+            .search-section {
+                padding: 1rem 2rem;
+            }
+
+            .input {
+                margin: .5rem 0rem;
+            } 
+
+            .placeholder { 
+                width: 200px !important;
+                height: 100px;
+                margin: 0.5rem;
+            }
+
+            .article h3 {
+                margin: 0px;
+            }
+
+            .article p {
+                margin: 0px;
+            }
+
+            .grid-item {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .align-left {
+                text-align: center;
+                float: none;
+                margin-top: .5rem;
+            }
+
+            .article {
+                display: flex;
+                justify-content: center;
+                align-items: cen;
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="header bg-primary">
+            <div class="flex flex-between flex-column">
+                <div class="flex">
+                    <div class="anchor logo bold cursor-pointer"><i class="fas fa-briefcase"></i> JobHunt</div>
+                    <div class="anchor bold underline cursor-pointer">Find Jobs</div>
+                    <div class="anchor thin cursor-pointer">Upskill Yourself</div>
+                </div>
+                <div class="flex">
+                    <div class="anchor thin cursor-pointer">Post a Job</div>
+                    <div class="anchor thin cursor-pointer">Sign in</div>
+                </div>
+            </div>
+            <section class="hero">
+                <h1 class="title">Find Your Dream Job</h1>
+                <p class="subtitle thin">Browse through thousands of full-time or part-time jobs near you</p>
+            </section>
+        </header>
+        <section class="search-section">
+            <div class="search">
+                <div class="input flex secondary-text flex-between">
+                   <div>
+                        <i class="fas fa-search mr-2"></i>
+                        <span class="thin">Job title or keyword</span>
+                   </div>
+                </div>
+                <div class="input flex secondary-text flex-between">
+                    <div>
+                        <i class="far fa-map mr-2"></i>
+                        <span class="thin">Select location</span>
+                    </div>
+                    <i class="fas fa-chevron-down cursor-pointer"></i>
+                </div>
+                <button class="button-search cursor-pointer">
+                    Search
+                </button>
+            </div>
+        </section>
+        <section class="options flex">
+            <div class="grid">
+                <div class="grid-item flex">
+                    <div class="placeholder"></div>
+                    <div class="article">
+                        <h3>Exevutive Producer</h3>
+                        <p class="thin font-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+                        <button class="align-left">View Details</button>
+                    </div>
+                </div>
+                <div class="grid-item flex">
+                    <div class="placeholder"></div>
+                    <div class="article">
+                        <h3>Exevutive Producer</h3>
+                        <p class="thin font-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+                        <button class="align-left">View Details</button>
+                    </div>
+                </div>
+                <div class="grid-item flex">
+                    <div class="placeholder"></div>
+                    <div class="article">
+                        <h3>Exevutive Producer</h3>
+                        <p class="thin font-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+                        <button class="align-left">View Details</button>
+                    </div>
+                </div>
+                <div class="grid-item flex">
+                    <div class="placeholder"></div>
+                    <div class="article">
+                        <h3>Exevutive Producer</h3>
+                        <p class="thin font-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+                        <button class="align-left">View Details</button>
+                    </div>
+                </div>
+                <div class="grid-item flex">
+                    <div class="placeholder"></div>
+                    <div class="article">
+                        <h3>Exevutive Producer</h3>
+                        <p class="thin font-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+                        <button class="align-left">View Details</button>
+                    </div>
+                </div>
+                <div class="grid-item flex">
+                    <div class="placeholder"></div>
+                    <div class="article">
+                        <h3>Exevutive Producer</h3>
+                        <p class="thin font-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has </p>
+                        <button class="align-left">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
